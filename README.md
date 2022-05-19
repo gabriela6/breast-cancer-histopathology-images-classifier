@@ -1,4 +1,9 @@
+![Histopathology image of Invasive Ductal Carcinoma](images/idc.jpeg)
+
+Source: (1)
+
 # breast-cancer-histopathology-images-classifier
+
 The goal of the project is to create a binary neural network classifier of Invasive Ductal Carcinoma (IDC) cancer in histopathology images from Kaggle database. 
 ## Motivation 
 Learning how to use TensorFlow library to create a neural network model working on real medical data. 
@@ -9,6 +14,10 @@ Invasive Ductal Carcinoma is the most common form of invasive breast cancer. Can
 ## Dataset structure 
 Dataset contains 277,524 patches of size 50 x 50 from histopathology images. Dataset is divided into 279 folders. Each folder contains 2 folders: one named "0" with patches classified as non-IDC tissue and one named "1" with patches classified as IDC tissue.
 Patches have following file format: u_xX_yY_classC.png, where u is patient ID, X is x coordinate, Y is y coordinate and C is a class (0 or 1). Example: 8863_idx5_x51_y1251_class0.png
+
+## Sample images from dataset
+![Histopathology images of non-IDC tissue and IDC tissue](images/tissue_pos_neg.png)
+
 ## Model Structure
 Model has a structure of a convolutional neural network. ReLU was used as an activation function for every layer, except from last dense layer, where Softmax was used. An Adam Optimizer has been chosen as an optimization algorithm. Sparse categorical crossentropy was used as loss function.
 
@@ -40,8 +49,10 @@ Kaggle API token is necessary for downloading Kaggle dataset. A link to instruct
 ## Used libraries
 scikit-learn, TensorFlow, Matplotlib, OpenCV, NumPy
 ## Sources
-https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images/discussion
+(1) Cropped image from https://radiopaedia.org/cases/invasive-ductal-carcinoma-histology?lang=gb License: https://creativecommons.org/licenses/by/2.0/)
 
-Cruz-Roa, A. et al. , "Automatic detection of invasive ductal carcinoma in whole slide images with convolutional neural networks," Proc. SPIE 9041, Medical Imaging 2014: Digital Pathology, 904103 (20 March 2014) https://doi.org/10.1117/12.2043872
+(2) https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images/discussion
 
-https://www.hopkinsmedicine.org/health/conditions-and-diseases/breast-cancer/invasive-ductal-carcinoma-idc#:~:text=Invasive%20ductal%20carcinoma%20is%20cancer,the%20cancer%20cells%20can%20spread.
+(3) Cruz-Roa, A. et al. , "Automatic detection of invasive ductal carcinoma in whole slide images with convolutional neural networks," Proc. SPIE 9041, Medical Imaging 2014: Digital Pathology, 904103 (20 March 2014) https://doi.org/10.1117/12.2043872
+
+(4) https://www.hopkinsmedicine.org/health/conditions-and-diseases/breast-cancer/invasive-ductal-carcinoma-idc#:~:text=Invasive%20ductal%20carcinoma%20is%20cancer,the%20cancer%20cells%20can%20spread.
